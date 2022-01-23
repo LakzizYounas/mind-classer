@@ -1,7 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "timeline": "apps/timeline",
-    "timeline-e2e": "apps/timeline-e2e"
+    "timeline-web": "apps/timeline/web",
+    "timeline-web-e2e": "apps/timeline/web-e2e"
   }
 }

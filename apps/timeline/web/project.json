@@ -1,6 +1,6 @@
 {
-  "root": "apps/timeline",
-  "sourceRoot": "apps/timeline/src",
+  "root": "apps/timeline/web",
+  "sourceRoot": "apps/timeline/web/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,14 +9,13 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/timeline",
-        "index": "apps/timeline/src/index.html",
+        "outputPath": "dist/apps/timeline/web",
+        "index": "apps/timeline/web/src/index.html",
         "baseHref": "/",
-        "main": "apps/timeline/src/main.tsx",
-        "polyfills": "apps/timeline/src/polyfills.ts",
-        "tsConfig": "apps/timeline/tsconfig.app.json",
-        "assets": ["apps/timeline/src/favicon.ico", "apps/timeline/src/assets"],
-        "styles": ["apps/timeline/src/styles.css"],
+        "main": "apps/timeline/web/src/main.tsx",
+        "polyfills": "apps/timeline/web/src/polyfills.ts",
+        "tsConfig": "apps/timeline/web/tsconfig.app.json",
+        "assets": ["apps/timeline/web/src/assets"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -24,8 +23,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/timeline/src/environments/environment.ts",
-              "with": "apps/timeline/src/environments/environment.prod.ts"
+              "replace": "apps/timeline/web/src/environments/environment.ts",
+              "with": "apps/timeline/web/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -40,12 +39,12 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "timeline:build",
+        "buildTarget": "timeline-web:build",
         "hmr": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "timeline:build:production",
+          "buildTarget": "timeline-web:build:production",
           "hmr": false
         }
       }
@@ -54,14 +53,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/timeline/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/timeline/web/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/timeline"],
+      "outputs": ["coverage/apps/timeline/web"],
       "options": {
-        "jestConfig": "apps/timeline/jest.config.js",
+        "jestConfig": "apps/timeline/web/jest.config.js",
         "passWithNoTests": true
       }
     }
