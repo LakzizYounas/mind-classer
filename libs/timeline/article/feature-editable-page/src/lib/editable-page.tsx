@@ -1,11 +1,7 @@
 import React from 'react';
 import { List } from 'immutable';
 
-export interface IBlock {
-  id: string;
-  html: string;
-  tag: string;
-}
+import { IBlock } from '@mind-class/timeline/article/feature-editable-block';
 
 const initialBlock: IBlock = {
   id: 'random-id',

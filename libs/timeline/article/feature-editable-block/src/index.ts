@@ -1,1 +1,1 @@
-export * from './lib/timeline-article-feature-editable-block';
+export * from './lib/feature-editable-block';
