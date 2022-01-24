@@ -13,7 +13,7 @@ const initialBlock: IBlock = {
   tag: 'p',
 };
 
-export const TimelineArticleFeature: React.FC = () => {
+export const EditablePage: React.FC = () => {
   const [blocks, setBlocks] = React.useState(List<IBlock>([initialBlock]));
 
   return (
