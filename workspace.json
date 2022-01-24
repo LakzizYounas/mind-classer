@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "timeline-article-feature-editable-block": "libs/timeline/article/feature-editable-block",
     "timeline-article-feature-editable-page": "libs/timeline/article/feature-editable-page",
     "timeline-article-router": "libs/timeline/article/router",
     "timeline-web": "apps/timeline/web",

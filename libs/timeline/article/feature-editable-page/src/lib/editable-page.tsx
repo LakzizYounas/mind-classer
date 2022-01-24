@@ -1,5 +1,5 @@
-import { List } from 'immutable';
 import React from 'react';
+import { List } from 'immutable';
 
 export interface IBlock {
   id: string;

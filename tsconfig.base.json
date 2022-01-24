@@ -19,6 +19,9 @@
       "@mind-class/timeline-article-feature-editable-page": [
         "libs/timeline/article/feature-editable-page/src/index.ts"
       ],
+      "@mind-class/timeline/article/feature-editable-block": [
+        "libs/timeline/article/feature-editable-block/src/index.ts"
+      ],
       "@mind-class/timeline/article/router": [
         "libs/timeline/article/router/src/index.ts"
       ]

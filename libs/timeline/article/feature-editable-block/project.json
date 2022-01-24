@@ -1,0 +1,25 @@
+{
+  "root": "libs/timeline/article/feature-editable-block",
+  "sourceRoot": "libs/timeline/article/feature-editable-block/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/timeline/article/feature-editable-block/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/timeline/article/feature-editable-block"],
+      "options": {
+        "jestConfig": "libs/timeline/article/feature-editable-block/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
