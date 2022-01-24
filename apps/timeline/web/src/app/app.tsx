@@ -1,10 +1,10 @@
-import { TimelineArticleFeature } from '@mind-class/timeline/article/feature';
+import { TimelineArticleRouter } from '@mind-class/timeline/article/router';
 
 export function App() {
   return (
     <>
-      <div>Hi</div>
-      <TimelineArticleFeature />
+      <TimelineArticleRouter />
+      {/* Put other routes here */}
     </>
   );
 }

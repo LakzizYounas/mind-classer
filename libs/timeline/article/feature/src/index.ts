@@ -1,1 +1,1 @@
-export * from './lib/timeline-article-feature';
+export * from './lib';
