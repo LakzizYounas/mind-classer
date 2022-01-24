@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "timeline-article-feature": "libs/timeline/article/feature",
+    "timeline-article-router": "libs/timeline/article/router",
     "timeline-web": "apps/timeline/web",
     "timeline-web-e2e": "apps/timeline/web-e2e"
   }

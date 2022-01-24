@@ -18,6 +18,9 @@
     "paths": {
       "@mind-class/timeline/article/feature": [
         "libs/timeline/article/feature/src/index.ts"
+      ],
+      "@mind-class/timeline/article/router": [
+        "libs/timeline/article/router/src/index.ts"
       ]
     }
   },
