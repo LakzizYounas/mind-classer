@@ -1,1 +1,1 @@
-export * from './lib/feature-editable-block';
+export * from './lib/editable-block';
