@@ -1,0 +1,25 @@
+{
+  "root": "libs/timeline/article/util-block",
+  "sourceRoot": "libs/timeline/article/util-block/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/timeline/article/util-block/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/timeline/article/util-block"],
+      "options": {
+        "jestConfig": "libs/timeline/article/util-block/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
