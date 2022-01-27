@@ -3,7 +3,9 @@
   "projects": {
     "timeline-article-feature-editable-block": "libs/timeline/article/feature-editable-block",
     "timeline-article-feature-editable-page": "libs/timeline/article/feature-editable-page",
+    "timeline-article-feature-select-block": "libs/timeline/article/feature-select-block",
     "timeline-article-router": "libs/timeline/article/router",
+    "timeline-article-util-block": "libs/timeline/article/util-block",
     "timeline-web": "apps/timeline/web",
     "timeline-web-e2e": "apps/timeline/web-e2e"
   }

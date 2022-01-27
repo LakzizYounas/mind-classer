@@ -1,5 +1,11 @@
-import React, { RefObject, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
+
+import { SelectBlock } from '@mind-class/timeline/article/feature-select-block';
+import {
+  getCaretCoordinates,
+  setCaretToEnd,
+} from '@mind-class/timeline/article/util-block';
 
 export interface IBlock {
   id: string;
@@ -16,50 +22,97 @@ export interface IBlockActions {
 
 export const EditableBlock: React.FC<IBlock & IBlockActions> = (props) => {
   const content = useRef<HTMLElement>(null);
-  const [html, setHtml] = useState(props.html);
-  const [htmlBackup, setHtmlBackup] = useState<string>();
-  const [previousKey, setPreviousKey] = useState('');
+
   const [tag, setTag] = useState(props.tag);
+  const [html, setHtml] = useState<string | null>(props.html);
+  const [htmlBackup, setHtmlBackup] = useState<string | null>(null);
+
+  const [previousKey, setPreviousKey] = useState('');
+
+  const [selectMenuIsOpen, setSelectMenuIsOpen] = useState(false);
+  const [selectMenuPosition, setSelectMenuPosition] = useState<{
+    x: number;
+    y: number;
+  }>({
+    x: 0,
+    y: 0,
+  });
 
   const handleChange = (event: ContentEditableEvent) => {
     setHtml(event.target.value);
   };
 
-  function onKeyDownHandler(e: any) {
-    console.log('🚀 ~ file: editable-block.tsx ~ line 20 ~ html', html);
-    if (e.key === '/') {
-      setHtmlBackup(html);
-    }
-    if (e.key === 'Enter') {
-      if (previousKey !== 'Shift') {
-        e.preventDefault();
-        props.addBlock({
-          id: props.id,
-          ref: content.current,
-        });
-      }
-    }
-    if (e.key === 'Backspace' && html === '') {
-      console.log('INSIDE ????');
-      e.preventDefault();
-      props.deleteBlock({
-        id: props.id,
-        ref: content.current,
-      });
-    }
-    setPreviousKey(e.key);
-  }
+  // const onKeyUpHandler = (e: any) => {
+  //   if (e.key === '/') {
+  //     openSelectMenuHandler();
+  //   }
+  // };
+
+  // const openSelectMenuHandler = () => {
+  //   const { x, y } = getCaretCoordinates();
+  //   setSelectMenuIsOpen(true);
+  //   setSelectMenuPosition({ x, y });
+  // };
+
+  // const closeSelectMenuHandler = () => {
+  //   setHtmlBackup(null);
+  //   setSelectMenuIsOpen(false);
+  //   setSelectMenuPosition({ x: 0, y: 0 });
+  //   document.removeEventListener('click', closeSelectMenuHandler);
+  // };
+
+  // const tagSelectionHandler = (tag: string) => {
+  //   setTag(tag);
+  //   setHtml(htmlBackup);
+  //   if (content.current) {
+  //     setCaretToEnd(content.current);
+  //   }
+  //   closeSelectMenuHandler();
+  // };
+
+  // const onKeyDownHandler = (e: any) => {
+  //   if (e.key === '/') {
+  //     setHtmlBackup(html);
+  //   }
+  //   if (e.key === 'Enter') {
+  //     if (previousKey !== 'Shift') {
+  //       e.preventDefault();
+  //       props.addBlock({
+  //         id: props.id,
+  //         ref: content.current,
+  //       });
+  //     }
+  //   }
+  //   // if (e.key === 'Backspace' && html === '') {
+  //   //   e.preventDefault();
+  //   //   props.deleteBlock({
+  //   //     id: props.id,
+  //   //     ref: content.current,
+  //   //   });
+  //   // }
+  //   setPreviousKey(e.key);
+  // };
 
   return (
-    <div style={{ backgroundColor: 'grey' }}>
-      <ContentEditable
-        className="Block"
-        innerRef={content}
-        html={html}
-        tagName={tag}
-        onChange={handleChange}
-        onKeyDown={onKeyDownHandler}
-      />
-    </div>
+    <>
+      {/* {selectMenuIsOpen && (
+        <SelectBlock
+          position={selectMenuPosition}
+          onSelect={tagSelectionHandler}
+          close={closeSelectMenuHandler}
+        />
+      )} */}
+      <div style={{ backgroundColor: 'grey' }}>
+        {/* <ContentEditable
+          className="Block"
+          innerRef={content}
+          html={html || ''}
+          tagName={tag}
+          onChange={handleChange}
+          onKeyDown={onKeyDownHandler}
+          onKeyUp={onKeyUpHandler}
+        /> */}
+      </div>
+    </>
   );
 };

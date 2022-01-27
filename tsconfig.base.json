@@ -22,8 +22,14 @@
       "@mind-class/timeline/article/feature-editable-block": [
         "libs/timeline/article/feature-editable-block/src/index.ts"
       ],
+      "@mind-class/timeline/article/feature-select-block": [
+        "libs/timeline/article/feature-select-block/src/index.ts"
+      ],
       "@mind-class/timeline/article/router": [
         "libs/timeline/article/router/src/index.ts"
+      ],
+      "@mind-class/timeline/article/util-block": [
+        "libs/timeline/article/util-block/src/index.ts"
       ]
     }
   },
