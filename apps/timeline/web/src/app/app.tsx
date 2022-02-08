@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom';
 
-import { EditablePage } from '@mind-class/timeline-article-feature-editable-page';
+import { EditablePage } from '@mind-class/timeline/article/feature-editable-page';
 
 export function App() {
   return (
