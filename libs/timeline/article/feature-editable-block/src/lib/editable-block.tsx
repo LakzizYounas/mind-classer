@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
 
 import { SelectBlock } from '@mind-class/timeline/article/feature-select-block';
@@ -103,7 +103,9 @@ export const EditableBlock: React.FC<IBlock & IBlockActions> = (props) => {
           close={closeSelectMenuHandler}
         />
       )} */}
-      <EditableContent text="" />
+
+      <EditableContent text="that's a text" />
+
       {/* <ContentEditable
           className="Block"
           innerRef={content}
