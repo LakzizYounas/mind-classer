@@ -6,6 +6,7 @@ import {
   getCaretCoordinates,
   setCaretToEnd,
 } from '@mind-class/timeline/article/util-block';
+import { EditableContent } from '@mind-class/timeline/article/feature-editable-content';
 
 export interface IBlock {
   id: string;
@@ -102,8 +103,8 @@ export const EditableBlock: React.FC<IBlock & IBlockActions> = (props) => {
           close={closeSelectMenuHandler}
         />
       )} */}
-      <div style={{ backgroundColor: 'grey' }}>
-        {/* <ContentEditable
+      <EditableContent text="" />
+      {/* <ContentEditable
           className="Block"
           innerRef={content}
           html={html || ''}
@@ -112,7 +113,6 @@ export const EditableBlock: React.FC<IBlock & IBlockActions> = (props) => {
           onKeyDown={onKeyDownHandler}
           onKeyUp={onKeyUpHandler}
         /> */}
-      </div>
     </>
   );
 };

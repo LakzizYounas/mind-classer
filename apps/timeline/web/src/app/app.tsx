@@ -1,9 +1,11 @@
-import { TimelineArticleRouter } from '@mind-class/timeline/article/router';
+import { Route } from 'react-router-dom';
+
+import { EditablePage } from '@mind-class/timeline-article-feature-editable-page';
 
 export function App() {
   return (
     <>
-      <TimelineArticleRouter />
+      <Route path="/" element={<EditablePage />} />
       {/* Put other routes here */}
     </>
   );
